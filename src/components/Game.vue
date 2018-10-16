@@ -5,12 +5,12 @@
             <progress :value="devilHealth" max="1000"/>
         </div>
 
-        <div class="jesus">
+        <div :class="jesusAnimation" class="jesus">
             <img src="../assets/jesus.jpeg">
             <progress :value="jesusHealth" max="1000"/>
 
             <div class="actions">
-                <action name="Jesus smite" :cooldown="8" />
+                <action name="Jesus smite" :cooldown="8" @use="smite" />
             </div>
         </div>
     </div>
@@ -27,6 +27,14 @@ export default {
         return {
             devilHealth: 1000,
             jesusHealth: 1000,
+            jesusAnimation: '',
+        }
+    },
+    methods: {
+        smite () {
+            this.devilHealth -= 80
+            this.jesusAnimation = 'smite'
+            setTimeout(() => this.jesusAnimation = '', 250)
         }
     }
 }
