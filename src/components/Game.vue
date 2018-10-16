@@ -8,6 +8,10 @@
         <div class="jesus">
             <img src="../assets/jesus.jpeg">
             <progress :value="jesusHealth" max="1000"/>
+
+            <div class="actions">
+                <action name="Jesus smite" :cooldown="8" />
+            </div>
         </div>
     </div>
 </template>
@@ -16,6 +20,9 @@
 import Action from './Action.vue'
 
 export default {
+    components: {
+        Action,
+    },
     data () {
         return {
             devilHealth: 1000,
