@@ -3,6 +3,9 @@
         <div class="devil">
             <img src="../assets/devil.jpg">
             <progress :value="devilHealth" max="1000"/>
+            <div class="cast">
+                <div v-if="isDevilCasting"></div>
+            </div>
         </div>
 
         <div :class="jesusAnimation" class="jesus">
@@ -28,7 +31,17 @@ export default {
             devilHealth: 1000,
             jesusHealth: 1000,
             jesusAnimation: '',
+            isDevilCasting: false,
         }
+    },
+    mounted () {
+        setInterval(() => {
+            this.isDevilCasting = true
+            setTimeout(() => {
+                this.jesusHealth -= 100
+                this.isDevilCasting = false
+            }, 1000)
+        }, 3000)
     },
     methods: {
         smite () {
