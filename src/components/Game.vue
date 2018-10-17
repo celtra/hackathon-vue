@@ -8,8 +8,8 @@
             </div>
         </div>
 
-        <div :class="jesusAnimation" class="jesus">
-            <img src="../assets/jesus.svg">
+        <div class="jesus">
+            <img :class="jesusAnimation" src="../assets/jesus.svg">
             <progress :value="jesusHealth" max="1000"/>
 
             <div class="actions">
