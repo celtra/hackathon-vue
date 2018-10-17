@@ -8,13 +8,13 @@
             </div>
         </div>
 
-        <div :class="jesusAnimation" class="jesus">
-            <img src="../assets/jesus.jpeg">
+        <div class="jesus">
+            <img :class="jesusAnimation" src="../assets/jesus.jpeg">
             <progress :value="jesusHealth" max="1000"/>
             <div class="actions">
-                <action name="Jesus smite" :cooldown="8" @use="smite" />
-                <action name="Hear my prayer" :cooldown="8" @use="pray" />
-                <action name="Jesus dodge" :cooldown="8" @use="dodge" />
+                <action name="Jesus headbutt" :cooldown="2" @use="headbutt" />
+                <action name="Jesus dodge" :cooldown="4" @use="dodge" />
+                <action name="Hear my prayer" :cooldown="6" @use="pray" />
             </div>
         </div>
     </div>
@@ -50,19 +50,19 @@ export default {
         }, 3000)
     },
     methods: {
-        smite () {
+        headbutt () {
             this.devilHealth -= 80
-            this.jesusAnimation = 'smite'
+            this.jesusAnimation = 'jesus-headbutt'
             setTimeout(() => this.jesusAnimation = '', 250)
         },
         pray () {
             this.isDevilCasting = false
-            this.jesusAnimation = 'pray'
+            this.jesusAnimation = 'jesus-pray'
             setTimeout(() => this.jesusAnimation = '', 1000)
         },
         dodge () {
             this.isJesusDodging = true
-            this.jesusAnimation = 'dodge'
+            this.jesusAnimation = 'jesus-dodge'
             setTimeout(() => {
                 this.jesusAnimation = ''
                 this.isJesusDodging = false
