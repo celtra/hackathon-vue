@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="devil">
-            <img src="../assets/devil.svg">
+            <img src="../assets/devil.jpg">
             <progress :value="devilHealth" max="1000"/>
         </div>
 
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Action from './Action.vue'
+import Ability from './Ability.vue'
 
 export default {
     components: {
