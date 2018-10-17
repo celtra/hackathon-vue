@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="devil">
-            <img src="../assets/devil.svg">
+            <img src="../assets/devil.jpg">
             <progress :value="devilHealth" max="1000"/>
         </div>
 
