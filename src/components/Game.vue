@@ -13,9 +13,9 @@
             <progress :value="jesusHealth" max="1000"/>
 
             <div class="actions">
-                <ability name="Jesus headbutt" :cooldown="8" @use="headbutt" />
-                <ability name="Hear my prayer" :cooldown="8" @use="pray" />
-                <ability name="Jesus dodge" :cooldown="8" @use="dodge" />
+                <ability name="Jesus headbutt" :cooldown="2" @use="headbutt" />
+                <ability name="Hear my prayer" :cooldown="4" @use="pray" />
+                <ability name="Jesus dodge" :cooldown="3" @use="dodge" />
             </div>
         </div>
     </div>
@@ -41,14 +41,19 @@ export default {
         setInterval(() => {
             this.isDevilCasting = true
             setTimeout(() => {
+<<<<<<< HEAD
                 if (this.isDevilCasting) {
                     if (!this.isJesusDodging) {
                         this.jesusHealth -= 100
                     }
                     this.isDevilCasting = false
                 }
+=======
+                this.jesusHealth -= 200
+                this.isDevilCasting = false
+>>>>>>> 4
             }, 1000)
-        }, 3000)
+        }, 2000)
     },
     methods: {
         headbutt () {
