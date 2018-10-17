@@ -1,12 +1,12 @@
 <template>
-    <div class="game">
+    <div>
         <div class="devil">
-            <img src="../assets/devil.jpg">
+            <img src="../assets/devil.svg">
             <progress :value="devilHealth" max="1000"/>
         </div>
 
         <div class="jesus">
-            <img src="../assets/jesus.jpeg">
+            <img src="../assets/jesus.svg">
             <progress :value="jesusHealth" max="1000"/>
 
             <div class="actions">
