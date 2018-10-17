@@ -10,7 +10,7 @@
             <progress :value="jesusHealth" max="1000"/>
 
             <div class="actions">
-                <action name="Jesus headbutt" :cooldown="8" @use="headbutt" />
+                <ability name="Jesus headbutt" :cooldown="8" @use="headbutt" />
             </div>
         </div>
     </div>
