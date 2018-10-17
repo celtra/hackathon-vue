@@ -1,78 +1,75 @@
 
 .game {
-    width: fit-content;
-    margin: 40px auto 0; 
-  }
-  
-  .god,
-  .devil {
-    width: 200px;
-    min-height: 100px;
-    margin-top: 20px;
-  }
-  
-  img {
-    height: 200px;
-    display: block;
-    margin: auto;
-  }
-  
-  progress {
-    width: 100%;
-  }
-  
-  .progress {
-    height: 15px;
-    width: 100%;
-    border: 1px solid;
-    border-radius: 3px;
-    animation: cast 1s linear;
-  }
-  
-  .actions {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  @keyframes cast {
-      from { width: 0%; }
-      to { width: 100%; }
-  }
-  
-  .jesus-dodge {
-    animation: dodge 0.8s linear;
-  }
-  
-  @keyframes dodge {
-    10% { transform: translateX(-50px); }
-    20% { transform: translateX(50px); }
-    40% { transform: translateX(-120px) scale(1.5); }
-  }
-  
-  .jesus-headbutt {
-    animation: headbutt 0.25s linear;
-  }
-  
-  @keyframes headbutt {
-    20% { transform: translateY(40px); }
-    60% { transform: translateY(-200px); }
-  }
-  
-  .jesus-pray {
-    animation: pray 1s linear, vibrate 0.1s infinite;
-  }
-  
-  @keyframes pray {
-    90% { transform: scale(1.5); }
-    100% { transform: scale(1); }
-  }
-  
-  // @keyframes vibrate {
-  //     50% { transform: translate(-5px); }
-  //     100% { transform: translate(5px); }
-  // }
+  width: fit-content;
+  margin: 40px auto 0; 
+}
 
+.god,
+.devil {
+  width: 200px;
+  min-height: 100px;
+  margin-top: 20px;
+}
 
+img {
+  height: 200px;
+  display: block;
+  margin: auto;
+}
+
+progress {
+  width: 100%;
+}
+
+.cast {
+  height: 17px;
+}
+
+.cast div {
+  height: 15px;
+  width: 100%;
+  border: 1px solid;
+  border-radius: 3px;
+  animation: cast 1s linear;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+@keyframes cast {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.jesus-dodge {
+  animation: dodge 0.8s linear;
+}
+
+@keyframes dodge {
+  10% { transform: translateX(-50px); }
+  20% { transform: translateX(50px); }
+  40% { transform: translateX(-120px) scale(1.5); }
+}
+
+.jesus-headbutt {
+  animation: headbutt 0.25s linear;
+}
+
+@keyframes headbutt {
+  20% { transform: translateY(40px); }
+  60% { transform: translateY(-200px); }
+}
+
+.jesus-pray {
+  animation: pray 1s linear, vibrate 0.1s infinite;
+}
+
+@keyframes pray {
+  90% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
 
 .action {
   width: 60px;
@@ -84,11 +81,13 @@
   border-radius: 3px;
   cursor: pointer;
 
-  &__name {
+  p {
+    margin: 0;
     text-align: center;
+    font-size: 14px;
   }
 
-  &__cooldown {
+  div {
     position: absolute;
     top: 0;
     width: 100%;
