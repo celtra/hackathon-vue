@@ -10,7 +10,7 @@
             <progress :value="jesusHealth" max="1000"/>
 
             <div class="actions">
-                <action name="Jesus headbutt" :cooldown="8" />
+                <ability name="Jesus headbutt" :cooldown="8" />
             </div>
         </div>
     </div>
@@ -21,7 +21,7 @@ import Ability from './Ability.vue'
 
 export default {
     components: {
-        Action,
+        Ability,
     },
     data () {
         return {
