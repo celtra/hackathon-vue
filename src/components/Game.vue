@@ -41,17 +41,12 @@ export default {
         setInterval(() => {
             this.isDevilCasting = true
             setTimeout(() => {
-<<<<<<< HEAD
                 if (this.isDevilCasting) {
                     if (!this.isJesusDodging) {
-                        this.jesusHealth -= 100
+                        this.jesusHealth -= 200
                     }
                     this.isDevilCasting = false
                 }
-=======
-                this.jesusHealth -= 200
-                this.isDevilCasting = false
->>>>>>> 4
             }, 1000)
         }, 2000)
     },
