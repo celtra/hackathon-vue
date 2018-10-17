@@ -57,12 +57,12 @@ export default {
         },
         pray () {
             this.isDevilCasting = false
-            this.jesusAnimation = 'pray'
+            this.jesusAnimation = 'jesus-pray'
             setTimeout(() => this.jesusAnimation = '', 1000)
         },
         dodge () {
             this.isJesusDodging = true
-            this.jesusAnimation = 'dodge'
+            this.jesusAnimation = 'jesus-dodge'
             setTimeout(() => {
                 this.jesusAnimation = ''
                 this.isJesusDodging = false
