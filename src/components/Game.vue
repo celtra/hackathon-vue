@@ -1,27 +1,27 @@
 <template>
-    <div class="game">
+    <div>
         <div class="devil">
             <img src="../assets/devil.jpg">
             <progress :value="devilHealth" max="1000"/>
         </div>
 
         <div :class="jesusAnimation" class="jesus">
-            <img src="../assets/jesus.jpeg">
+            <img src="../assets/jesus.svg">
             <progress :value="jesusHealth" max="1000"/>
 
             <div class="actions">
-                <action name="Jesus smite" :cooldown="8" @use="smite" />
+                <action name="Jesus headbutt" :cooldown="8" @use="headbutt" />
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import Action from './Action.vue'
+import Ability from './Ability.vue'
 
 export default {
     components: {
-        Action,
+        Ability,
     },
     data () {
         return {
@@ -31,7 +31,7 @@ export default {
         }
     },
     methods: {
-        smite () {
+        headbutt () {
             this.devilHealth -= 80
             this.jesusAnimation = 'smite'
             setTimeout(() => this.jesusAnimation = '', 250)
