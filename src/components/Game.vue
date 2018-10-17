@@ -33,7 +33,7 @@ export default {
     methods: {
         headbutt () {
             this.devilHealth -= 80
-            this.jesusAnimation = 'smite'
+            this.jesusAnimation = 'jesus-headbutt'
             setTimeout(() => this.jesusAnimation = '', 250)
         }
     }
