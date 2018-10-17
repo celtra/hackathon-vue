@@ -11,6 +11,7 @@
         <div class="jesus">
             <img :class="jesusAnimation" src="../assets/jesus.svg">
             <progress :value="jesusHealth" max="1000"/>
+
             <div class="actions">
                 <ability name="Jesus headbutt" :cooldown="8" @use="headbutt" />
                 <ability name="Hear my prayer" :cooldown="8" @use="pray" />
