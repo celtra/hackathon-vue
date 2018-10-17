@@ -1,5 +1,5 @@
 <template>
-    <div class="game">
+    <div>
         <div class="devil">
             <img src="../assets/devil.jpg">
             <progress :value="devilHealth" max="1000"/>
@@ -9,23 +9,23 @@
         </div>
 
         <div :class="jesusAnimation" class="jesus">
-            <img src="../assets/jesus.jpeg">
+            <img src="../assets/jesus.svg">
             <progress :value="jesusHealth" max="1000"/>
             <div class="actions">
-                <action name="Jesus smite" :cooldown="8" @use="smite" />
-                <action name="Hear my prayer" :cooldown="8" @use="pray" />
-                <action name="Jesus dodge" :cooldown="8" @use="dodge" />
+                <ability name="Jesus headbutt" :cooldown="8" @use="headbutt" />
+                <ability name="Hear my prayer" :cooldown="8" @use="pray" />
+                <ability name="Jesus dodge" :cooldown="8" @use="dodge" />
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import Action from './Action.vue'
+import Ability from './Ability.vue'
 
 export default {
     components: {
-        Action,
+        Ability,
     },
     data () {
         return {
@@ -50,9 +50,9 @@ export default {
         }, 3000)
     },
     methods: {
-        smite () {
+        headbutt () {
             this.devilHealth -= 80
-            this.jesusAnimation = 'smite'
+            this.jesusAnimation = 'jesus-headbutt'
             setTimeout(() => this.jesusAnimation = '', 250)
         },
         pray () {
