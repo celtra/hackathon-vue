@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Action from './Action.vue'
+import Ability from './Ability.vue'
 
 export default {
 }
