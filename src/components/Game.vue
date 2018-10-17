@@ -38,10 +38,10 @@ export default {
         setInterval(() => {
             this.isDevilCasting = true
             setTimeout(() => {
-                this.jesusHealth -= 100
+                this.jesusHealth -= 200
                 this.isDevilCasting = false
             }, 1000)
-        }, 3000)
+        }, 2000)
     },
     methods: {
         headbutt () {
