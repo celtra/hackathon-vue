@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="devilHealth > 0 && jesusHealth > 0">
         <div class="devil">
             <img src="../assets/devil.jpg">
             <progress :value="devilHealth" max="1000"/>
@@ -18,6 +18,9 @@
                 <ability name="Jesus dodge" :cooldown="3" @use="dodge" />
             </div>
         </div>
+    </div>
+    <div v-else>
+        Game over
     </div>
 </template>
 
