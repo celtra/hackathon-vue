@@ -30,6 +30,7 @@ export default {
         use () {
             if (this.isAvailable) {
                 this.remainingCooldown = this.cooldown
+                this.$emit('use')
             }
         }
     }

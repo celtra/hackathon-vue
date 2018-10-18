@@ -6,11 +6,11 @@
         </div>
 
         <div class="jesus">
-            <img src="../assets/jesus.svg">
+            <img :class="jesusAnimation" src="../assets/jesus.svg">
             <progress :value="jesusHealth" max="1000"/>
 
             <div class="actions">
-                <ability name="Jesus headbutt" :cooldown="8" />
+                <ability name="Jesus headbutt" :cooldown="2" @use="headbutt" />
             </div>
         </div>
     </div>
@@ -27,6 +27,14 @@ export default {
         return {
             devilHealth: 1000,
             jesusHealth: 1000,
+            jesusAnimation: '',
+        }
+    },
+    methods: {
+        headbutt () {
+            this.devilHealth -= 80
+            this.jesusAnimation = 'jesus-headbutt'
+            setTimeout(() => this.jesusAnimation = '', 250)
         }
     }
 }
