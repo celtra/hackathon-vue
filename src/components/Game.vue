@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="devilHealth > 0 && jesusHealth > 0">
         <div class="devil">
             <img src="../assets/devil.jpg">
             <progress :value="devilHealth" max="1000"/>
@@ -14,8 +14,13 @@
 
             <div class="actions">
                 <ability name="Jesus headbutt" :cooldown="2" @use="headbutt" />
+                <ability name="Hear my prayer" :cooldown="4" @use="pray" />
+                <ability name="Jesus dodge" :cooldown="3" @use="dodge" />
             </div>
         </div>
+    </div>
+    <div v-else>
+        Game over
     </div>
 </template>
 
@@ -32,14 +37,19 @@ export default {
             jesusHealth: 1000,
             jesusAnimation: '',
             isDevilCasting: false,
+            isJesusDodging: false,
         }
     },
     mounted () {
         setInterval(() => {
             this.isDevilCasting = true
             setTimeout(() => {
-                this.jesusHealth -= 200
-                this.isDevilCasting = false
+                if (this.isDevilCasting) {
+                    if (!this.isJesusDodging) {
+                        this.jesusHealth -= 200
+                    }
+                    this.isDevilCasting = false
+                }
             }, 1000)
         }, 2000)
     },
@@ -48,7 +58,20 @@ export default {
             this.devilHealth -= 80
             this.jesusAnimation = 'jesus-headbutt'
             setTimeout(() => this.jesusAnimation = '', 250)
-        }
+        },
+        pray () {
+            this.isDevilCasting = false
+            this.jesusAnimation = 'jesus-pray'
+            setTimeout(() => this.jesusAnimation = '', 1000)
+        },
+        dodge () {
+            this.isJesusDodging = true
+            this.jesusAnimation = 'jesus-dodge'
+            setTimeout(() => {
+                this.jesusAnimation = ''
+                this.isJesusDodging = false
+            }, 800)
+        },
     }
 }
 </script>
